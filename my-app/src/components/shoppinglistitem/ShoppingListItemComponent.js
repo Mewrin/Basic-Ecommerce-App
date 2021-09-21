@@ -9,6 +9,7 @@ const ShoppingListItem = props => (
 )
 
 function addItemToBasket(itemName) {
+    // Todo - update the global store (redux) to add this 'item' to the basket (update basket state)
     alert("You have added an item to your basket: " + itemName)
 };
 
