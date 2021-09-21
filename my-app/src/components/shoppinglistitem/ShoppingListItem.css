@@ -1,0 +1,7 @@
+.shoppingListItem {
+    display: inline-flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 3%;
+    height: 30px;
+}
