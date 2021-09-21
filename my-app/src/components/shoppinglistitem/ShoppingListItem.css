@@ -1,7 +1,16 @@
 .shoppingListItem {
     display: inline-flex;
-    white-space: nowrap;
-    overflow-x: auto;
-    width: 3%;
+    width: 10%;
     height: 30px;
+    margin-top: 1m;
+    margin-bottom: 1em;
+}
+
+.shoppingListItemButton {
+    margin-left: 3em;
+}
+
+.shoppingListItem:before {
+    content:"-";
+    margin-right: 0.5em;
 }

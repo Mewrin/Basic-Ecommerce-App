@@ -4,10 +4,9 @@ import ShoppingListComponent from "../shoppinglist/ShoppingListComponent";
 import './ECommerce.css';
 
 function ECommerceComponent() {
-    // on load get all possible shopping items 
     return (
         <div className="ECommerceComponent">
-            <h2>Shopping List</h2>
+            <h2 className="ECommerceTitle">Shopping List</h2>
             <ShoppingListComponent />
         </div>
     )

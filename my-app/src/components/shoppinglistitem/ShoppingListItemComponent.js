@@ -4,7 +4,7 @@ import "./ShoppingListItem.css"
 const ShoppingListItem = props => (
     <div>
         <li className="shoppingListItem">{props.itemName}</li>
-        <button type="button" onClick={() => addItemToBasket(props.itemName)}>Add {props.itemName} to basket</button>
+        <button className="shoppingListItemButton" type="button" onClick={() => addItemToBasket(props.itemName)}>Add item to basket</button>
     </div>
 )
 

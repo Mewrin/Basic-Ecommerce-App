@@ -1,3 +1,9 @@
 .ECommerceComponent {
     text-align: left;
 }
+
+.ECommerceTitle {
+    padding-left: 3em;
+    text-align: center;
+    width: 15%;
+}
