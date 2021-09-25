@@ -4,6 +4,10 @@ import './ShoppingList.css';
 import { fetchShoppingList } from "./ShoppingListApi";
 import { useState } from "react";
 
+function shoppingItemsAreValid(shoppingItems) {
+    return shoppingItems != null && shoppingItems.data != undefined && shoppingItems.data.length > 0;
+}
+
 function ShoppingListComponent() {
     
     const [shoppingItems, setShoppingItems] = useState(null);
@@ -16,7 +20,7 @@ function ShoppingListComponent() {
     return (
         <ul className="ShoppingList">
             { 
-                shoppingItems != null && shoppingItems.data != undefined && shoppingItems.data.length > 0 ? (
+                shoppingItemsAreValid(shoppingItems) ? (
                     shoppingItems.data.map((item, i) => (
                         <ShoppingListItem key={item + i} itemName={item}></ShoppingListItem>
                     ))
