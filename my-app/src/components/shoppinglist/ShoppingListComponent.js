@@ -1,16 +1,27 @@
-import React from "react";
-import './ShoppingList.css';
+import React, { useEffect } from "react";
 import ShoppingListItem from "../shoppinglistitem/ShoppingListItemComponent";
+import './ShoppingList.css';
+import { fetchShoppingList } from "./ShoppingListApi";
+import { useState } from "react";
 
 function ShoppingListComponent() {
-    // Todo - Call off to an API and retrieve a list of items (item name, cost, how many available - could be a basic fastAPI)
-    const shoppingItems = ['iPhone 13', 'iPad mini 6th generation', 'Macbook Pro'];
+    
+    const [shoppingItems, setShoppingItems] = useState(null);
+
+    useEffect(() => {
+        const newItems = fetchShoppingList();
+        setShoppingItems(newItems);
+    });
+    
     return (
         <ul className="ShoppingList">
             { 
-                shoppingItems.map((item, i) => (
-                    <ShoppingListItem key={item + i} itemName={item }></ShoppingListItem>
-                )) 
+                shoppingItems != null && shoppingItems.data != undefined && shoppingItems.data.length > 0 ? (
+                    shoppingItems.data.map((item, i) => (
+                        <ShoppingListItem key={item + i} itemName={item}></ShoppingListItem>
+                    ))
+                )
+                : <p> No items currently available </p>
             }
         </ul>
     )
